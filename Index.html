@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Norfolk, VA & San Francisco</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .hero {
+      background: linear-gradient(45deg, #ff7e5f, #feb47b);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.8s ease-out;
+    }
+
+    .cta-button {
+      padding: 15px 30px;
+      background: #fff;
+      color: #ff7e5f;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #ff7e5f;
+      color: white;
+    }
+
+    .cities {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 20px;
+      background: #fff;
+    }
+
+    .city {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 45%;
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .city:hover {
+      transform: scale(1.05);
+    }
+
+    .city-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .city-info h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .city-info p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .city img {
+      width: 100%;
+      border-radius: 8px;
+      transition: opacity 0.3s ease;
+    }
+
+    .city img:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cities {
+        flex-direction: column;
+      }
+
+      .city {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Explore Norfolk, VA & San Francisco</h1>
+    <p>Your next adventure awaits</p>
+    <a href="#cities" class="cta-button">Start Exploring</a>
+  </section>
+
+  <!-- Cities Section -->
+  <section id="cities" class="cities">
+    <div class="city" id="norfolk">
+      <div class="city-info">
+        <h2>Norfolk, VA</h2>
+        <p>Discover Norfolk's coastal charm and vibrant culture.</p>
+        <a href="https://www.norfolk.gov" target="_blank">Learn More</a>
+      </div>
+      <img src="norfolk.jpg" alt="Norfolk, VA">
+    </div>
+    
+    <div class="city" id="sanfrancisco">
+      <div class="city-info">
+        <h2>San Francisco, CA</h2>
+        <p>Explore the iconic landmarks and diverse neighborhoods of San Francisco.</p>
+        <a href="https://www.sftravel.com" target="_blank">Learn More</a>
+      </div>
+      <img src="sf.jpg" alt="San Francisco">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Explore Cities</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctaButton = document.querySelector('.cta-button');
+
+      // Smooth scroll to Cities section on CTA button click
+      ctaButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('#cities').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
